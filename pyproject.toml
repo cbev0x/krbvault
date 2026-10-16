@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "krbvault"
+version = "0.1.0"
+description = "Encrypted, identity-keyed store for Kerberos tickets and credentials (authorized red-team engagements)."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "cbev", email = "chasebt64@gmail.com" }]
+keywords = ["kerberos", "active-directory", "red-team", "ccache", "credentials"]
+dependencies = [
+    "pynacl>=1.5",
+    "impacket>=0.11",         # ccache/kirbi parsing, TGT/TGS/renew, S4U (getST)
+    "minikerberos>=0.3",      # PKINIT (PFX -> TGT); pulls oscrypto
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/cbev0x/krbvault"
+
+[project.scripts]
+krbvault = "krbvault.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["krbvault*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

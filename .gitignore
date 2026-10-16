@@ -1,0 +1,17 @@
+# engagement material — never commit
+*.kvault
+*.ccache
+*.kirbi
+*.pfx
+*.pem
+.krbvault/
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.venv/
+venv/
