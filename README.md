@@ -1,7 +1,7 @@
 # krbvault
 
 A consolidated, encrypted store for Kerberos tickets and credentials,
-organized by identity, for authorized red-team engagements.
+organized by identity, for authorized red-team and pentesting engagements.
 
 On a large engagement your auth material sprawls: ccache files in `/tmp`, a few
 `.kirbi`s, NT hashes and AES keys pasted into notes, a PFX or two. `krbvault`
